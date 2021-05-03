@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <title>Loan Prediction</title>
+    </head>
+    <body>
+        <h2 style="color:white ; text-align:center" >Loan Prediction</h2>
+        <div style="color:white" class="container">
+            <form action="{{url_for('predict')}}" method="post">
+             
+                <label for="first">Age</label>
+                <input id ="first" name="Age" required="required"><br><br>
+                <label for="second">Number of years with the bank:</label>
+                <input id ="second" name="Years" required="required"><br><br>
+                <label for="third">Income in Lakhs</label>
+                <input id ="third" name="Income" type="number" required="required"><br><br>
+                <label for="fourth">Number of Family Members:</label>
+                <input id ="fourth" name="Family" type="number" required='required'><br><br>
+                <label for="fifth">CC Avg</label>
+                <input id ="fifth" name="CC"  required='required'><br><br>
+                <label for="sixth">Education : </label>
+                <select name="Education" id="sixth" required="required">
+                    <option value="0">Yes</option>
+                    <option value="1">No</option>
+                </select><br><br>
+                <label for="seventh">Mortage: </label>
+                <select name="Mortage" id="seventh" required="required">
+                    <option value="0">Yes</option>
+                    <option value="1">No</option>
+                </select><br><br>
+                <label for="eight">Securities Account </label>
+                <select name="Securities" id="eight" required="required">
+                    <option value="0">Yes</option>
+                    <option value="1">No</option>
+                </select><br><br>
+                <label for="nine">Current Deposit Account </label>
+                <select name="CDAccount" id="nine" required="required">
+                    <option value="0">Yes</option>
+                    <option value="1">No</option>
+                </select><br><br>
+
+                <label for="ten">Do you use net banking ? </label>
+                <select name="Banking" id="ten" required="required">
+                    <option value="0">Yes</option>
+                    <option value="1">No</option>
+                </select><br><br>
+
+                
+                <label for="eleven">Do you use credit card? </label>
+                <select name="Credit Card" id="eleven" required="required">
+                    <option value="0">Yes</option>
+                    <option value="1">No</option>
+                </select><br><br>
+                <button id="sub" type="submit">Calculate</button> 
+                <button id="res" type="reset">Reset</button>
+            </form>
+             <br><br>
+              <h3 style="color:white ; text-align:center">{{ prediction_text }}</h3>
+        </div>
+           
+        <style>
+            body {
+                background-color:#2a2b29;
+                /* text-align: center; */
+                padding : 0px;
+            }
+            
+            .container {
+                    width: 500px;
+                    clear: both;
+                    padding-left:500px;
+            }
+
+            .container input {
+                    width: 100%;
+                    clear: both;
+            }
+            label{
+                font-size: 18px;
+            }
+           
+        </style>
+    </body>
+</html>
